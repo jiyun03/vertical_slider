@@ -1,0 +1,62 @@
+.panel {
+	width: 100%;
+	height: 100%;
+	position: relative;
+
+	li {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+
+		.bg {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			transition: 0.8s;
+		}
+		&[data-index='0'] .bg {
+			background: #cae5ee;
+		}
+		&[data-index='1'] .bg {
+			background: #ccf1e0;
+		}
+		&[data-index='2'] .bg {
+			background: #e8f7d3;
+		}
+		&[data-index='3'] .bg {
+			background: #e6daff;
+		}
+
+		//활성화 모양 설정
+		&.on {
+			z-index: 2;
+
+			.bg {
+				opacity: 1;
+				transform: translateY(0%);
+			}
+		}
+
+		//up모양 설정
+		&.up {
+			.bg {
+				opacity: 0;
+				transform: translateY(-80%);
+			}
+		}
+
+		//down모양 설정
+		&.down {
+			.bg {
+				opacity: 0;
+				transform: translateY(80%);
+			}
+		}
+	}
+}
